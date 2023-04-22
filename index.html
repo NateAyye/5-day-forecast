@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <script
+      src="https://kit.fontawesome.com/2773baef5c.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>5 Day Weather Forcast</title>
   </head>
   <body>
@@ -21,92 +26,97 @@
       <h1>5-Day Weather Forecast</h1>
     </header>
 
-    <nav>
-      <form id="search-form">
-        <label for="city-search">Search for a City:</label>
-        <input id="city-search" type="search" />
-        <button type="submit">Search</button>
-      </form>
+    <div class="container">
+      <nav>
+        <form id="search-form">
+          <label for="city-search">Search for a City:</label>
+          <input id="city-search" type="search" />
+          <button type="submit">Search</button>
+        </form>
 
-      <hr />
+        <hr />
 
-      <div class="tablist" role="tablist" aria-labelledby="tablist-label">
-        <span class="sr-only" id="tablist-label">List of Searched Cities</span>
-        <!-- // Simple example of how the tablist buttons should look -->
-        <button
-          id="tab-{location}"
-          type="button"
-          role="tab"
-          aria-selected="true"
-          aria-controls="{panelId}"
+        <div class="tablist" role="tablist" aria-labelledby="tablist-label">
+          <span class="sr-only" id="tablist-label">
+            List of Searched Cities
+          </span>
+          <!-- // Simple example of how the tablist buttons should look -->
+          <button
+            id="tab-{location}"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="{panelId}"
+          >
+            <span class="focus">{City Name}</span>
+          </button>
+
+          <button
+            id="tab-{location1}"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="{panelId}"
+          >
+            <span class="focus">{City Name}</span>
+          </button>
+
+          <button
+            id="tab-{location2}"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="{panelId}"
+          >
+            <span class="focus">{City Name}</span>
+          </button>
+        </div>
+      </nav>
+
+      <div id="divider"></div>
+
+      <main>
+        <div
+          id="tabpanel-{location}"
+          role="tabpanel"
+          tabindex="0"
+          aria-labelledby="tab-{location}"
         >
-          <span>{City Name}</span>
-        </button>
-
-        <button
-          id="tab-{location1}"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="{panelId}"
-        >
-          <span>{City Name}</span>
-        </button>
-
-        <button
-          id="tab-{location2}"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="{panelId}"
-        >
-          <span>{City Name}</span>
-        </button>
-      </div>
-    </nav>
-
-    <main>
-      <div
-        id="tabpanel-{location}"
-        role="tabpanel"
-        tabindex="0"
-        aria-labelledby="tab-{location}"
-      >
-        <section class="current-forcast">
-          <h2>{City Name}{Date}</h2>
-          <span>Temp: {temperature}</span>
-          <span>Wind: {wind Speed}</span>
-          <span>Humidity: {precentage}</span>
-        </section>
-
-        <section class="five-day-forecast">
-          <h3>5-Day Forcast</h3>
-          <!-- // Basic Setup for the individual days in the 5-day forcast -->
-          <div class="dynamic-days">
-            <div class="single-day-forcast">
-              <p><strong>{date}</strong></p>
-              <span>{Weather Icon}</span>
-              <p>Temp: {temperature}</p>
-              <p>Wind: {wind Speed}</p>
-              <p>Humidity: {precentage}</p>
+          <section tabindex="0" class="current-forecast">
+            <h2>{City Name}{Date}</h2>
+            <p>Temp: {temperature}</p>
+            <p>Wind: {wind Speed}</p>
+            <p>Humidity: {precentage}</p>
+          </section>
+          <section tabindex="0" class="five-day-forecast">
+            <h3>5-Day Forcast</h3>
+            <!-- // Basic Setup for the individual days in the 5-day forcast -->
+            <div class="dynamic-days">
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>{Weather Icon}</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>{Weather Icon}</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>{Weather Icon}</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
             </div>
-            <div>
-              <p><strong>{date}</strong></p>
-              <span>{Weather Icon}</span>
-              <p>Temp: {temperature}</p>
-              <p>Wind: {wind Speed}</p>
-              <p>Humidity: {precentage}</p>
-            </div>
-            <div>
-              <p><strong>{date}</strong></p>
-              <span>{Weather Icon}</span>
-              <p>Temp: {temperature}</p>
-              <p>Wind: {wind Speed}</p>
-              <p>Humidity: {precentage}</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+          </section>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
