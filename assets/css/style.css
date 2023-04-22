@@ -1,0 +1,53 @@
+:root {
+  --gap: 0.5rem;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.25;
+  /* color-scheme: dark light; */
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    'head head'
+    'nav main';
+
+  grid-template-columns: 400px auto;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+header {
+  grid-area: head;
+  background-color: rgb(58, 96, 179);
+  color: whitesmoke;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+main,
+.tablist,
+#search-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: var(--gap);
+}
+
+#search-form label {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.five-day-forecast .dynamic-days {
+  display: flex;
+}

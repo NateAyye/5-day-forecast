@@ -20,8 +20,9 @@
     <header>
       <h1>5-Day Weather Forecast</h1>
     </header>
+
     <nav>
-      <form>
+      <form id="search-form">
         <label for="city-search">Search for a City:</label>
         <input id="city-search" type="search" />
         <button type="submit">Search</button>
@@ -29,7 +30,7 @@
 
       <hr />
 
-      <div role="tablist" aria-labelledby="tablist-label">
+      <div class="tablist" role="tablist" aria-labelledby="tablist-label">
         <span class="sr-only" id="tablist-label">List of Searched Cities</span>
         <!-- // Simple example of how the tablist buttons should look -->
         <button
@@ -71,23 +72,39 @@
         tabindex="0"
         aria-labelledby="tab-{location}"
       >
-        <section class="current-weather">
+        <section class="current-forcast">
           <h2>{City Name}{Date}</h2>
           <span>Temp: {temperature}</span>
           <span>Wind: {wind Speed}</span>
           <span>Humidity: {precentage}</span>
         </section>
 
-        <section class="5-day-forcast">
+        <section class="five-day-forecast">
           <h3>5-Day Forcast</h3>
-
-          <!-- <div>   // Basic Setup for the individual days in the 5-day forcast
-            <p><strong>{date}</strong></p>
-            <span>{Weather Icon}</span>
-            <p>Temp: {temperature}</p>
-            <p>Wind: {wind Speed}</p>
-            <p>Humidity: {precentage}</p>
-          </div> -->
+          <!-- // Basic Setup for the individual days in the 5-day forcast -->
+          <div class="dynamic-days">
+            <div class="single-day-forcast">
+              <p><strong>{date}</strong></p>
+              <span>{Weather Icon}</span>
+              <p>Temp: {temperature}</p>
+              <p>Wind: {wind Speed}</p>
+              <p>Humidity: {precentage}</p>
+            </div>
+            <div>
+              <p><strong>{date}</strong></p>
+              <span>{Weather Icon}</span>
+              <p>Temp: {temperature}</p>
+              <p>Wind: {wind Speed}</p>
+              <p>Humidity: {precentage}</p>
+            </div>
+            <div>
+              <p><strong>{date}</strong></p>
+              <span>{Weather Icon}</span>
+              <p>Temp: {temperature}</p>
+              <p>Wind: {wind Speed}</p>
+              <p>Humidity: {precentage}</p>
+            </div>
+          </div>
         </section>
       </div>
     </main>
