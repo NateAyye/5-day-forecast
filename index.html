@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Get Your 5 day Forcast for anywhere in the world just search for your city Now!!"
+    />
+    <meta name="keywords" content="Weather, Forcast, 5Day, City, Region" />
+    <meta name="author" content="nathan Cuevas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>5 Day Weather Forcast</title>
+  </head>
+  <body>
+    <header>
+      <h1>5-Day Weather Forecast</h1>
+    </header>
+    <nav>
+      <form>
+        <label for="city-search">Search for a City:</label>
+        <input id="city-search" type="search" />
+        <button type="submit">Search</button>
+      </form>
+
+      <hr />
+
+      <div role="tablist" aria-labelledby="tablist-label">
+        <span class="sr-only" id="tablist-label">List of Searched Cities</span>
+        <!-- // Simple example of how the tablist buttons should look -->
+        <button
+          id="tab-{location}"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="{panelId}"
+        >
+          <span>{City Name}</span>
+        </button>
+
+        <button
+          id="tab-{location1}"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="{panelId}"
+        >
+          <span>{City Name}</span>
+        </button>
+
+        <button
+          id="tab-{location2}"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="{panelId}"
+        >
+          <span>{City Name}</span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <div
+        id="tabpanel-{location}"
+        role="tabpanel"
+        tabindex="0"
+        aria-labelledby="tab-{location}"
+      >
+        <section class="current-weather">
+          <h2>{City Name}{Date}</h2>
+          <span>Temp: {temperature}</span>
+          <span>Wind: {wind Speed}</span>
+          <span>Humidity: {precentage}</span>
+        </section>
+
+        <section class="5-day-forcast">
+          <h3>5-Day Forcast</h3>
+
+          <!-- <div>   // Basic Setup for the individual days in the 5-day forcast
+            <p><strong>{date}</strong></p>
+            <span>{Weather Icon}</span>
+            <p>Temp: {temperature}</p>
+            <p>Wind: {wind Speed}</p>
+            <p>Humidity: {precentage}</p>
+          </div> -->
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
