@@ -151,6 +151,10 @@ div[role='tabpanel'] .current-forecast {
   color: var(--primary-light);
 }
 
+.single-day-forecast span {
+  font-size: 40px;
+}
+
 .single-day-forecast > :not(:last-child) {
   margin-bottom: var(--gap-sm);
 }
