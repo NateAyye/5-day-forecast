@@ -169,6 +169,10 @@ div[role='tabpanel'] .current-forecast {
   white-space: nowrap;
 }
 
+[role='tabpanel'].is-hidden {
+  display: none;
+}
+
 @media screen and (width < 750px) {
   .container {
     display: flex;

@@ -51,7 +51,7 @@
             type="button"
             role="tab"
             aria-selected="true"
-            aria-controls="{panelId}"
+            aria-controls="tabpanel-1"
           >
             <span class="focus">{City Name}</span>
           </button>
@@ -61,7 +61,7 @@
             type="button"
             role="tab"
             aria-selected="false"
-            aria-controls="{panelId}"
+            aria-controls="tabpanel-2"
             tabindex="-1"
           >
             <span class="focus">{City Name}</span>
@@ -72,7 +72,7 @@
             type="button"
             role="tab"
             aria-selected="false"
-            aria-controls="{panelId}"
+            aria-controls="tabpanel-3"
             tabindex="-1"
           >
             <span class="focus">{City Name}</span>
@@ -91,6 +91,88 @@
         >
           <section tabindex="0" class="current-forecast">
             <h2>{City Name}{Date}</h2>
+            <p>Temp: {temperature}</p>
+            <p>Wind: {wind Speed}</p>
+            <p>Humidity: {precentage}</p>
+          </section>
+          <section tabindex="0" class="five-day-forecast">
+            <h3>5-Day Forcast</h3>
+            <!-- // Basic Setup for the individual days in the 5-day forcast -->
+            <div class="dynamic-days">
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>&#127783;</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>&#9728;</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>&#9748;</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          id="tabpanel-2"
+          role="tabpanel"
+          tabindex="0"
+          class="is-hidden"
+          aria-labelledby="tab-2"
+        >
+          <section tabindex="0" class="current-forecast">
+            <h2>{City Name}{Date} 222222</h2>
+            <p>Temp: {temperature}</p>
+            <p>Wind: {wind Speed}</p>
+            <p>Humidity: {precentage}</p>
+          </section>
+          <section tabindex="0" class="five-day-forecast">
+            <h3>5-Day Forcast</h3>
+            <!-- // Basic Setup for the individual days in the 5-day forcast -->
+            <div class="dynamic-days">
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>&#127783;</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>&#9728;</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+              <div tabindex="0" class="single-day-forecast">
+                <p class="dynamic-date">{date}</p>
+                <span>&#9748;</span>
+                <p>Temp: {temperature}</p>
+                <p>Wind: {wind Speed}</p>
+                <p>Humidity: {precentage}</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div
+          id="tabpanel-3"
+          role="tabpanel"
+          tabindex="0"
+          class="is-hidden"
+          aria-labelledby="tab-3"
+        >
+          <section tabindex="0" class="current-forecast">
+            <h2>{City Name}{Date} 33333333333</h2>
             <p>Temp: {temperature}</p>
             <p>Wind: {wind Speed}</p>
             <p>Humidity: {precentage}</p>

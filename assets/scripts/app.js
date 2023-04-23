@@ -7,16 +7,24 @@ function moveFocusToTab(currentTab) {
 }
 
 tabList.click((e) => {
+  if (!tabButtons.includes(e.target)) return;
   const tgt = e.target;
+  const tabpanel = $(`#${e.target.getAttribute('aria-controls')}`)[0];
   const selectedTab = $('[aria-selected="true"]')[0];
-  console.log(selectedTab);
+  const nextTabPanel = $(`#${selectedTab.getAttribute('aria-controls')}`)[0];
+
+  console.log(tabpanel, nextTabPanel);
+
   tgt.setAttribute('aria-selected', 'true');
   tgt.setAttribute('tabindex', '0');
+  nextTabPanel.classList.add('is-hidden');
   selectedTab.setAttribute('aria-selected', 'false');
   selectedTab.setAttribute('tabindex', '-1');
+  tabpanel.classList.remove('is-hidden');
 });
 
 tabList.keydown((e) => {
+  if (!tabButtons.includes(e.target)) return;
   const currentTab = e.target;
   const index = tabButtons.indexOf(currentTab);
 
