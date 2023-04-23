@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="assets/scripts/app.js" defer></script>
+
+    <!-- Reference that I used to get all the HTML entity codes for each weather type - https://www.htmlsymbols.xyz/miscellaneous-symbols/weather-symbols  -->
+
     <title>5 Day Weather Forcast</title>
   </head>
   <body>
@@ -37,7 +47,7 @@
           </span>
           <!-- // Simple example of how the tablist buttons should look -->
           <button
-            id="tab-{location}"
+            id="tab-1"
             type="button"
             role="tab"
             aria-selected="true"
@@ -47,21 +57,23 @@
           </button>
 
           <button
-            id="tab-{location1}"
+            id="tab-2"
             type="button"
             role="tab"
             aria-selected="false"
             aria-controls="{panelId}"
+            tabindex="-1"
           >
             <span class="focus">{City Name}</span>
           </button>
 
           <button
-            id="tab-{location2}"
+            id="tab-3"
             type="button"
             role="tab"
             aria-selected="false"
             aria-controls="{panelId}"
+            tabindex="-1"
           >
             <span class="focus">{City Name}</span>
           </button>
@@ -72,10 +84,10 @@
 
       <main>
         <div
-          id="tabpanel-{location}"
+          id="tabpanel-1"
           role="tabpanel"
           tabindex="0"
-          aria-labelledby="tab-{location}"
+          aria-labelledby="tab-1"
         >
           <section tabindex="0" class="current-forecast">
             <h2>{City Name}{Date}</h2>
@@ -96,14 +108,14 @@
               </div>
               <div tabindex="0" class="single-day-forecast">
                 <p class="dynamic-date">{date}</p>
-                <span>{Weather Icon}</span>
+                <span>&#9728;</span>
                 <p>Temp: {temperature}</p>
                 <p>Wind: {wind Speed}</p>
                 <p>Humidity: {precentage}</p>
               </div>
               <div tabindex="0" class="single-day-forecast">
                 <p class="dynamic-date">{date}</p>
-                <span>{Weather Icon}</span>
+                <span>&#9748;</span>
                 <p>Temp: {temperature}</p>
                 <p>Wind: {wind Speed}</p>
                 <p>Humidity: {precentage}</p>
