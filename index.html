@@ -21,6 +21,7 @@
     ></script>
 
     <script src="assets/scripts/app.js" defer></script>
+    <script src="assets/scripts/accessible.js" defer></script>
 
     <!-- Reference that I used to get all the HTML entity codes for each weather type - https://www.htmlsymbols.xyz/miscellaneous-symbols/weather-symbols  -->
 
@@ -95,6 +96,7 @@
             <p>Wind: {wind Speed}</p>
             <p>Humidity: {precentage}</p>
           </section>
+
           <section tabindex="0" class="five-day-forecast">
             <h3>5-Day Forcast</h3>
             <!-- // Basic Setup for the individual days in the 5-day forcast -->
@@ -123,6 +125,7 @@
             </div>
           </section>
         </div>
+
         <div
           id="tabpanel-2"
           role="tabpanel"
@@ -136,6 +139,7 @@
             <p>Wind: {wind Speed}</p>
             <p>Humidity: {precentage}</p>
           </section>
+
           <section tabindex="0" class="five-day-forecast">
             <h3>5-Day Forcast</h3>
             <!-- // Basic Setup for the individual days in the 5-day forcast -->
@@ -164,6 +168,7 @@
             </div>
           </section>
         </div>
+
         <div
           id="tabpanel-3"
           role="tabpanel"
@@ -207,5 +212,6 @@
         </div>
       </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </body>
 </html>

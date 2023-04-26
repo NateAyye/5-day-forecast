@@ -41,6 +41,7 @@ button {
 }
 
 /* Making sure that my button meets the WAI ARIA standards */
+/* I made the outline transparent so that people on low contrast mode still have something to represent focus */
 button:focus,
 button:active,
 button:hover,
