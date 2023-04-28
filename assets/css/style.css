@@ -110,6 +110,10 @@ button[role='tab'] {
   position: relative;
 }
 
+button[role='tab'] span {
+  pointer-events: none;
+}
+
 button[role='tab'][aria-selected='true'] {
   background-color: var(--active-color);
 }
