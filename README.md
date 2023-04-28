@@ -1,15 +1,5 @@
 # 5 Day Weather Forecast
 
-<style>
-  #site-launch {
-    background: #24acf2;
-    color: whitesmoke;
-    font-size: 20px;
-    border-radius: .5rem;
-    padding: 1rem 2rem;
-  }
-</style>
-
 <a  id='site-launch'  href='https://nateayye.github.io/5-day-forecast/'>&#129193; Lauch Live Site Here &#129192;</a>
 
 ## Description
