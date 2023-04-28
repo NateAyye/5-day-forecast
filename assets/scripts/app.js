@@ -11,7 +11,7 @@ const iconImage = (imgId) =>
 
 async function fetchApi(cityName) {
   const res = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`,
   );
   const data = await res.json();
   const newCity = {
@@ -27,7 +27,7 @@ async function fetchApi(cityName) {
   currentWeather = await currentWeatherRes.json();
 
   const fiveDayWeatherRes = await fetch(
-    `http://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
   );
 
   const weather = await fiveDayWeatherRes.json();
