@@ -9,6 +9,7 @@ let currentWeather;
 const iconImage = (imgId) =>
   `https://openweathermap.org/img/wn/${imgId}@2x.png`;
 
+// Updating the global variable for weather with the api
 async function updateCurrentWeather(newCity) {
   const currentWeatherRes = await fetch(
     `http://api.openweathermap.org/data/2.5/weather?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
@@ -16,6 +17,8 @@ async function updateCurrentWeather(newCity) {
 
   currentWeather = await currentWeatherRes.json();
 }
+
+// Main function for fetching the data from the api and setting them in the global variables and localStorage.
 async function fetchApi(cityName) {
   const res = await fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`,
@@ -46,6 +49,7 @@ async function fetchApi(cityName) {
   return newCity;
 }
 
+// Function for saving the city into the localStorage right next to the previously saved cities
 function saveCity(cityObj) {
   const previous = localStorage.getItem('forecast');
   const olderCities = previous ? JSON.parse(previous) : [];
@@ -76,6 +80,7 @@ function createFiveDayForecast() {
   return innerHTML;
 }
 
+// Using Jquery to append an button element with template literals to input the dynamic values
 function createTab(cityName) {
   tabs.prepend(`
     <button
