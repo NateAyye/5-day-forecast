@@ -12,14 +12,14 @@ const iconImage = (imgId) =>
 // Updating the global variable for weather with the api
 async function updateCurrentWeather(newCity) {
   const currentWeatherRes = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
   );
 
   currentWeather = await currentWeatherRes.json();
 }
 async function updateFiveDayArray(newCity) {
   const fiveDayWeatherRes = await fetch(
-    `http://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
   );
 
   const weather = await fiveDayWeatherRes.json();
@@ -32,7 +32,7 @@ async function updateFiveDayArray(newCity) {
 // Main function for fetching the data from the api and setting them in the global variables and localStorage.
 async function fetchApi(cityName) {
   const res = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`,
   );
   const data = await res.json();
   const newCity = {
@@ -42,13 +42,13 @@ async function fetchApi(cityName) {
   };
 
   const currentWeatherRes = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
+    `https://api.openweathermap.org/data/2.5/weather?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
   );
 
   currentWeather = await currentWeatherRes.json();
 
   const fiveDayWeatherRes = await fetch(
-    `http://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
   );
 
   const weather = await fiveDayWeatherRes.json();
