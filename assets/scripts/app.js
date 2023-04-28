@@ -116,7 +116,9 @@ function createPanel(cityName) {
 
 async function handleSearchButton(e) {
   e.preventDefault();
-  const cityName = $('#search-form input').val() || 'Sacramento';
+  const cityName = $('#search-form input').val().trim();
+
+  if (!cityName) return alert('City Name cannot be blank');
 
   // loop through the cities in local storage that were set within the init function
   // To check if the cityName being searched is already in their so we can return and not add it again
