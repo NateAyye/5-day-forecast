@@ -11,6 +11,9 @@
     <meta name="author" content="nathan Cuevas" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Gettting an interest-cohort error and this is how i found to fix it - https://stackoverflow.com/questions/69619035/error-with-permissions-policy-header-unrecognized-feature-interest-cohort -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -53,7 +56,7 @@
 
       <main></main>
     </div>
-     <!-- Adding the dayjs CDN to manipulate dates in a familiar way -->
+    <!-- Adding the dayjs CDN to manipulate dates in a familiar way -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
   </body>
 </html>
