@@ -17,6 +17,17 @@ async function updateCurrentWeather(newCity) {
 
   currentWeather = await currentWeatherRes.json();
 }
+async function updateFiveDayArray(newCity) {
+  const fiveDayWeatherRes = await fetch(
+    `http://api.openweathermap.org/data/2.5/forecast?lat=${newCity.lat}&lon=${newCity.lon}&appid=${API_KEY}&units=imperial`,
+  );
+
+  const weather = await fiveDayWeatherRes.json();
+
+  fiveDayArray = weather.list.filter((day) => {
+    return day.dt_txt.includes('15:00:00');
+  });
+}
 
 // Main function for fetching the data from the api and setting them in the global variables and localStorage.
 async function fetchApi(cityName) {
@@ -165,6 +176,7 @@ async function init() {
   savedCities.forEach(async (city) => {
     fetchApi(city.name).then(async (newCity) => {
       await updateCurrentWeather(newCity);
+      await updateFiveDayArray(newCity);
 
       // console.log(currentWeather);
 
